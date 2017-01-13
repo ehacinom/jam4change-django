@@ -42,8 +42,13 @@ python manage.py runserver
 
 # A model is a class that represents table or collection in our DB, and where every attribute of the class is a field of the table or collection. Models are defined in the app/models.py (in our example: myapp/models.py). Every model inherits from django.db.models.Model.
 
-# to avoide django.core.exceptions.ImproperlyConfigured: Requested setting DEFAULT_INDEX_TABLESPACE, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.
-# http://stackoverflow.com/questions/20794901/configuring-django
+# Make your model
+
+# make migrations
+python manage.py makemigrations --empty myapp --name load_intial_data
+# get sqlparse
+# bulk insert from csv
+python manage.py migrate
 
 
 be careful about 
